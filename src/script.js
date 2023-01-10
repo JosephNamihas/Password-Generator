@@ -129,13 +129,15 @@ function checkLength(param) {
 
 //TODO validations for Boolean needed here (x 3)
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-
+// Function for getting a random element from an array via shuffling 
+function shuffleArr(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
 }
-
+  
 // Function to generate password (max number indicated by paramater entry)
 function generatePasswordArray() {
+
   if (lowerCaseBool === true) {
     lowerCaseTrue();
   }
@@ -159,44 +161,36 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  userPassword = shuffleArr(passwordArray);
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = userPassword;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
 
-
-// the parameter will be the array
 function lowerCaseTrue() {
       passwordArray = lowerCasedCharacters.concat(passwordArray);
-      console.log(passwordArray);
   }
 
 function upperCaseTrue() {
       passwordArray = upperCasedCharacters.concat(passwordArray);
-      console.log(passwordArray);
 }
 
 function numericTrue() {
   passwordArray = numericCharacters.concat(passwordArray);
-  console.log(passwordArray);
 }
 
 function specialTrue() {
   passwordArray = specialCharacters.concat(passwordArray);
-  console.log(passwordArray);
 }
 // ---------------------------- START OF FLOW -------------------------
-// Initital values
 
 var returnedArray = getPasswordOptions();
 console.log(returnedArray);
 
-// TODO Simplyfy this
 var lengthOfPassword = returnedArray[0]
 var lowerCaseBool = returnedArray[1];
 var upperCaseBool = returnedArray[2];
@@ -204,48 +198,7 @@ var numericBool = returnedArray[3];
 var specialCharBool = returnedArray[4];
 
 var passwordArray = [];
-generatePasswordArray(passwordArray);
-
-console.log(passwordArray);
-
-// Feed password array into random picker which then generates password
-
-
-
-
-// When button clicked
-
-// Prompts for length, upper/lowercase, numbers, special characters 
-// Store prompts within a variable / array index
-// Validate password length is correct
-// If correct, go to next prompt
-  // Otherwise, error message. Repeat prompt?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // Concat for merging arrays
-
- /* When generator password button is clicked, create series of prompts for password criteria.
-
- Prompt 1: Length of Password (=> 10 && =< 64
- Prompt 2: Do you want lower case?
- Prompt 3: Do you want upper case?
- Prompt 4: Do you want numeric?
- Prompt 5: What special characters do you want?
-
- Code should validate for each input and at least one character type should be selected
-
- Once prompts are answered, the password should be generated and displayed in an alert*/
+generatePasswordArray();
+var userPassword = shuffleArr(passwordArray);
+console.log(userPassword);
+writePassword();
