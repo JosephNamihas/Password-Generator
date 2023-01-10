@@ -90,6 +90,7 @@ var specialCharacters = [
 
 // Function to prompt user for password options
 
+// -------------------------------------PROMPTS-------------------------
 // TODO - Simplify this / create function for validaiton between each prompt
 function getPasswordOptions() {
   var returnedChoices = [];
@@ -109,13 +110,14 @@ function getPasswordOptions() {
   return returnedChoices;
 }
 
+// -------------------------------------VALIDATION-------------------------
 function checkLength(param) {
   if (param < 10) {
-    alert("Your password will be too short!")
+    alert("Your password will be too short!");
   }
 
   if (param > 64) {
-    alert("Your password will be too long!")
+    alert("Your password will be too long!");
   }
 }
 
@@ -125,7 +127,6 @@ function checkLength(param) {
   }
 }*/
 
-
 //TODO validations for Boolean needed here (x 3)
 
 // Function for getting a random element from an array
@@ -134,11 +135,24 @@ function getRandom(arr) {
 }
 
 // Function to generate password (max number indicated by paramater entry)
-function generatePassword(param) {
-    let randomNum = Math.floor(Math.random()*param+1) 
-    return randomNum;
-}
+function generatePasswordArray() {
+  if (lowerCaseBool === true) {
+    lowerCaseTrue();
+  }
 
+  if (upperCaseBool === true) {
+    upperCaseTrue();
+  }
+
+  if (numericBool === true) {
+    numericTrue();
+  }
+
+  if (specialCharBool === true) {
+    specialTrue();
+  }
+  return passwordArray;
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -155,34 +169,46 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
+
+// the parameter will be the array
+function lowerCaseTrue() {
+      passwordArray = lowerCasedCharacters.concat(passwordArray);
+      console.log(passwordArray);
+  }
+
+function upperCaseTrue() {
+      passwordArray = upperCasedCharacters.concat(passwordArray);
+      console.log(passwordArray);
+}
+
+function numericTrue() {
+  passwordArray = numericCharacters.concat(passwordArray);
+  console.log(passwordArray);
+}
+
+function specialTrue() {
+  passwordArray = specialCharacters.concat(passwordArray);
+  console.log(passwordArray);
+}
 // ---------------------------- START OF FLOW -------------------------
 // Initital values
-var lengthOfPassword = 0;
-var lowerCaseBool = false;
-var upperCaseBool = false;
-var numericBool = false;
-var specialCharBool = false;
 
 var returnedArray = getPasswordOptions();
 console.log(returnedArray);
 
-
-// VALIDATION FUNCTIONS
-
-function checkLength(param) {
-  if (param < 10) {
-    alert("Your password will be too short!")
-  }
-}
-
 // TODO Simplyfy this
-lengthOfPassword = returnedArray[0];
-lowerCaseBool = returnedArray[1];
-upperCaseBool = returnedArray[2];
-numericBool = returnedArray[3];
-specialCharBool = returnedArray[4];
+var lengthOfPassword = returnedArray[0]
+var lowerCaseBool = returnedArray[1];
+var upperCaseBool = returnedArray[2];
+var numericBool = returnedArray[3];
+var specialCharBool = returnedArray[4];
 
+var passwordArray = [];
+generatePasswordArray(passwordArray);
 
+console.log(passwordArray);
+
+// Feed password array into random picker which then generates password
 
 
 

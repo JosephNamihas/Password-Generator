@@ -1,11 +1,8 @@
 // Generator a random number
 
-function generateRandom(param){
-    let randomNum = Math.floor(Math.random()*param+1) 
-    return randomNum;
-}
+let oldArray = [1, 2, 3, 4, 5];
 
-for (i = 0; i < 50; i++) {
-var randomNumber = generateRandom(10);
-console.log(randomNumber);
-}
+let newArray = oldArray.slice();
+
+console.log({newArray});
+console.log([oldArray]);
