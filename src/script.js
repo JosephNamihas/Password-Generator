@@ -121,14 +121,6 @@ function checkLength(param) {
   }
 }
 
-// TODO validation for integer
-  /*if(typeoff  === string){
-    alert("Please use numbers instead")
-  }
-}*/
-
-//TODO validations for Boolean needed here (x 3)
-
 // Function for getting a random element from an array via shuffling 
 function shuffleArr(array) {
     array.sort(() => Math.random() - 0.5);
