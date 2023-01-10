@@ -1,79 +1,60 @@
-# Module 5 Challenge: Password Generator
+# JavaScript Password Generator
 
-## Overview
- 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+## Description
+I was tasked by the client to create a program that would generate a random password based on multiple criteria:
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+- To give the user a prompt how long the password should be (between 10 and 64 characters)
 
-## Instructions
+- To give the user prompts on if it should have lowercase, uppercase, numbers or special characters. It must have had at least one of these.
 
-The following image shows the web application's appearance and functionality:
+- In built validation that would detect if incorrect data types were entered
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+## Challenges Faced
 
+### Where to Start?
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 10 characters but no more than 64.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+At the start, I felt quite confident. I had all these ideas, but once the code was on the screen, I felt like I wasn't quite sure what problem I should tackle next. Every week I'm understanding even more how important it is to be organised with your code.
 
-## Grading Requirements
+### Messy but Functional
 
-This challenge is graded based on the following criteria: 
+Like most of the code I'm writing at the moment, it seems to be messy, but also scalable and functionable.
+As I learn more algorithms and develop my problem solving, I'll become more efficent. 
 
-### Technical Acceptance Criteria: 40%
+I felt like it got a bit function bloated at times, and at one point I was completely overwhelmed by my own code. I need to look into finding ways to making my code much more readable and understandable when it becomes bigger. 
 
-* Satisfies all of the above acceptance criteria plus the following:
+## For Next Time
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+On my previous project, I came to the conclusion that I needed to use far more functions to make my code more readable and easier to read. I did that here, but found it to get a bit overwhelming when I was at 200 lines of code. Will look to explorer new ways to lay out my functions. 
 
 
-## Review
+## Installation
 
-You are required to submit the following for review:
+Run the website by following the GitGub Pages link: 
+https://josephnamihas.github.io/Password-Generator/
 
-* The URL of the deployed application.
+Follow the prompts to generate a password.
+If a new password is required, press it again.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
----
+## Useage
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+![Length Prompt](/images/length-prompt.PNG)
+
+
+## Credits
+
+https://www.w3schools.com/
+
+https://developer.mozilla.org/en-US/ - For Array methods
+## License 
+
+MIT License
+
+Copyright (c) [2022] [Joseph Namihas]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

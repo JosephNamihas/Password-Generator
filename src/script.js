@@ -201,4 +201,5 @@ var passwordArray = [];
 generatePasswordArray();
 var userPassword = shuffleArr(passwordArray);
 console.log(userPassword);
+userPassword
 writePassword();
