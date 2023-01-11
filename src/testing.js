@@ -1,8 +1,11 @@
-// Generator a random number
+///Convert array to string
 
-let oldArray = [1, 2, 3, 4, 5];
+var userPassword = ["J","O","E"]
+var stringPassword ="";
 
-let newArray = oldArray.slice();
+for(i = 0; i < userPassword.length; i++)
+{
+  stringPassword = stringPassword + userPassword[i];
+}
 
-console.log({newArray});
-console.log([oldArray]);
+console.log(stringPassword);

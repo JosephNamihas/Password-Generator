@@ -184,14 +184,25 @@ var returnedArray = getPasswordOptions();
 console.log(returnedArray);
 
 var lengthOfPassword = returnedArray[0]
+
+
 var lowerCaseBool = returnedArray[1];
 var upperCaseBool = returnedArray[2];
 var numericBool = returnedArray[3];
 var specialCharBool = returnedArray[4];
 
-var passwordArray = [];
-generatePasswordArray();
+// Password array contains all the values (lowercase, upper, numeric and special)
+var passwordArray = generatePasswordArray();
 var userPassword = shuffleArr(passwordArray);
-console.log(userPassword);
-userPassword
+
+
+var stringPassword ="";
+
+for(i = 0; i < userPassword; i++)
+{
+  stringPassword = stringPassword + userPassword[i];
+}
+
+console.log(stringPassword);
+
 writePassword();
