@@ -9,6 +9,14 @@ I was tasked by the client to create a program that would generate a random pass
 
 - In built validation that would detect if incorrect data types were entered
 
+## Known Issues
+
+- User length is not taken into account. Prints entire concatenated array.
+
+- If user enters a string or an invalid number, the alert pops up and the program ends.
+
+- Printed password has commas between every value. Tried to replace, but can't use replace on an object. Need to convert object to string and then use .ReplaceAll(",", "");
+
 ## Challenges Faced
 
 ### Where to Start?
@@ -20,7 +28,7 @@ At the start, I felt quite confident. I had all these ideas, but once the code w
 Like most of the code I'm writing at the moment, it seems to be messy, but also scalable and functionable.
 As I learn more algorithms and develop my problem solving, I'll become more efficent. 
 
-I felt like it got a bit function bloated at times, and at one point I was completely overwhelmed by my own code. I need to look into finding ways to making my code much more readable and understandable when it becomes bigger. 
+I felt like it got a bit function bloated at times, and at one point I was completely overwhelmed by my own code. I need to look into finding ways to making my code much more readable and understandable when it becomes bigger.
 
 ## For Next Time
 
@@ -40,6 +48,9 @@ If a new password is required, press it again.
 
 
 ![Length Prompt](/images/length-prompt.PNG)
+
+![Password Generated](/images/password-generated.PNG)
+
 
 
 ## Credits

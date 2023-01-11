@@ -119,6 +119,10 @@ function checkLength(param) {
   if (param > 64) {
     alert("Your password will be too long!");
   }
+
+  if (typeof param === 'string') {
+    alert("Numbers only!")
+  }
 }
 
 // Function for getting a random element from an array via shuffling 
