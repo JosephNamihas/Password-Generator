@@ -89,7 +89,8 @@ var upperCasedCharacters = [
 ];
 
 var passwordLength = 0;
-passwordObject = {};
+var passwordArray = [];
+userChoicesObject = {};
 
 var lowerCaseConfirm;
 var upperCaseConfirm;
@@ -115,8 +116,7 @@ function getPasswordOptions() {
     getPasswordOptions();
   }
   
-  passwordObject = { 
-    length: passwordLength,
+  userChoicesObject = { 
     lowercase: lowerCaseConfirm,
     uppercase: upperCaseConfirm,
     numeric: numericCaseConfirm,
@@ -124,13 +124,37 @@ function getPasswordOptions() {
   };
 }
 
-// Random number based on MAX password length
-function getRandomNumber(passwordLength) {
-  return Math.floor(math.random() * passwordLength);
+function generatePasswordArray() { // For each value in userChoices Object ?
+  if(userChoicesObject.lowercase === true){
+    passwordArray = lowerCasedCharacters.concat(passwordArray);
+  }
+  if(userChoicesObject.uppercase === true){
+    passwordArray = upperCasedCharacters.concat(passwordArray);
+  }
+  if(userChoicesObject.numeric === true){
+    passwordArray = numericCharacters.concat(passwordArray);
+  }
+  if(userChoicesObject.special === true){
+    passwordArray = specialCharacters.concat(passwordArray);
+  }
+}
+
+function shuffleArray(passwordArray) { // Fisher Yates shuffle algorithm 
+  var i, j, k;
+  for (i = passwordArray.length - 1; i > 0; i--){
+    j = Math.floor(Math.random() * (i + 1));
+    k = passwordArray[i]
+    passwordArray[i] = passwordArray[j];
+    passwordArray[j] = k;
+  }
+  return passwordArray;
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  for (let i = 0; i < arr.length; i++){
+
+  }
 
 }
 // Function to generate password with user input
@@ -158,5 +182,14 @@ generateBtn.addEventListener('click', writePassword);
 //----------------------------
 
 getPasswordOptions();
-console.log(passwordObject);
+console.log(userChoicesObject);
+generatePasswordArray();
+console.log(passwordArray);
+shuffleArray(passwordArray);
+console.log(passwordArray);
+
+
+// splice the array based on passWord length
+// join the array to remove the commas
+// output PW
 
