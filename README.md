@@ -3,7 +3,7 @@
 ## Description
 I was tasked by the client to create a program that would generate a random password based on multiple criteria:
 
-- To give the user a prompt how long the password should be (between 10 and 64 characters)
+- To give the user a prompt how long the password should be (between 8 and 128 characters) 
 
 - To give the user prompts on if it should have lowercase, uppercase, numbers or special characters. It must have had at least one of these.
 

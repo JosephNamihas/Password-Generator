@@ -88,6 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+ // GLOBAL VARIABLES
 var passwordLength = 0;
 var passwordArray = [];
 userChoicesObject = {};
@@ -100,7 +101,9 @@ var specialCaseConfirm;
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  // VALIDATION TO CHECK BETWEEN CERTAIN CHARACTERS
   passwordLength = prompt("How long would you like your password to be? It needs to be between 8 - 128 characters.")
+
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Password length must be between 8 and 128 characters!")
     getPasswordOptions();
@@ -111,6 +114,7 @@ function getPasswordOptions() {
         specialCaseConfirm = confirm("Would you like special characters?");
   }
 
+  // VALIDATION TO CHECK ONE DATA TYPE SELECTED
   if (lowerCaseConfirm === false && upperCaseConfirm === false && numericCaseConfirm === false && specialCaseConfirm === false) {
     alert("You must choose at least one character type");
     getPasswordOptions();
@@ -137,6 +141,14 @@ function generatePasswordArray() { // For each value in userChoices Object ?
   if(userChoicesObject.special === true){
     passwordArray = specialCharacters.concat(passwordArray);
   }
+
+  
+
+  for (let i = 0; i < passwordLength; i++) {
+    passwordArray.push(passwordArray[i]);
+  }
+
+
 }
 
 function shuffleArray(passwordArray) { // Fisher Yates shuffle algorithm 
@@ -150,17 +162,18 @@ function shuffleArray(passwordArray) { // Fisher Yates shuffle algorithm
   return passwordArray;
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-  for (let i = 0; i < arr.length; i++){
+function spliceArray (passwordArray) {
 
-  }
+  passwordArray.splice(passwordLength, 100);
+  console.log(passwordArray);
 
+  return passwordArray;
 }
+
 // Function to generate password with user input
 function generatePassword() {
-  var generatedPw = "Hello"
-  return generatedPw;
+  var generatedPw = passwordArray;
+  return generatedPw.join("");
 
 }
 
@@ -184,12 +197,10 @@ generateBtn.addEventListener('click', writePassword);
 getPasswordOptions();
 console.log(userChoicesObject);
 generatePasswordArray();
-console.log(passwordArray);
 shuffleArray(passwordArray);
-console.log(passwordArray);
+spliceArray(passwordArray);
+generatePassword();
 
-
-// splice the array based on passWord length
-// join the array to remove the commas
-// output PW
+// Password outputs, but can't press button more than once
+// Validation - Don't let the user enter in a string
 
