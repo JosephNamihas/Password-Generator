@@ -9,31 +9,28 @@ I was tasked by the client to create a program that would generate a random pass
 
 - In built validation that would detect if incorrect data types were entered
 
-## Known Issues
+This was a fun project which made me think about different ways to present data and to merge it based on user input. 
+I learnt a lot about array methods and how programs are mainly just a group of functions. Also gave me a lot of experience with data structures and how they work.
 
-- User length is not taken into account. Prints entire concatenated array.
-
-- If user enters a string or an invalid number, the alert pops up and the program ends.
-
-- Printed password has commas between every value. Tried to replace, but can't use replace on an object. Need to convert object to string and then use .ReplaceAll(",", "");
 
 ## Challenges Faced
 
-### Where to Start?
+### Concatenating the Arrays
 
-At the start, I felt quite confident. I had all these ideas, but once the code was on the screen, I felt like I wasn't quite sure what problem I should tackle next. Every week I'm understanding even more how important it is to be organised with your code.
+Found a few difficulties when merging the array into a central "password array" which would then be used to generate the actual password. At one point, commas were being printed after every character. I made use of the join() method to recreate the array into a string with no commas.
 
-### Messy but Functional
+### Shuffling the Array
 
-Like most of the code I'm writing at the moment, it seems to be messy, but also scalable and functionable.
-As I learn more algorithms and develop my problem solving, I'll become more efficent. 
+I looked into different algorithms on how to shuffle an array which was quite interesting. The 'Fisher Yates shuffle' was something I found and implemented. It involves using a random number to draw an element from an array until none remain. 
 
-I felt like it got a bit function bloated at times, and at one point I was completely overwhelmed by my own code. I need to look into finding ways to making my code much more readable and understandable when it becomes bigger.
+### Optimisation
 
-## For Next Time
+I felt I could have done this project in less lines of code.
+The important thing right now is that it works. It's functionable and it scales. Like a lot of these projects, I hope to come back in 6 months time and do the project in a lot less code. That could be a fun challenge at the end of my bootcamp
 
-On my previous project, I came to the conclusion that I needed to use far more functions to make my code more readable and easier to read. I did that here, but found it to get a bit overwhelming when I was at 200 lines of code. Will look to explorer new ways to lay out my functions. 
+## Regenerating the Password
 
+Had to add a seperate function to the event listener to make sure the password was generated again after the button was pressed. Previously, it wouldn't alert the user on the screen, you would need to press the button to generate the initial password. This could be poor design as once the prompts were anwsered, the user may be unsure what to do.
 
 ## Installation
 
@@ -47,10 +44,19 @@ If a new password is required, press it again.
 ## Useage
 
 
-![Length Prompt](/images/length-prompt.PNG)
+![Generated Password](/images/password-generated.PNG)
 
-![Password Generated](/images/password-generated.PNG)
+- Appears in the text box when prompts are answered.
 
+![Password Regenerated](/images/password-regenerated.PNG)
+
+- When clicking the 'Generate Password' button, the program is repeated without the prompts and produced a shuffled password
+
+![Alert for No Option Chosen](/images/datatype-alert.PNG)
+
+- Alert when an option isn't chosen
+
+![128 character password with all options](/images/longpassword.PNG)
 
 
 ## Credits
